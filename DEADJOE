@@ -1,0 +1,24 @@
+
+*** These modified files were found in JOE when it aborted on Sat Feb 18 09:41:08 2023
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/home/odroid/catkin_ws/src/offboard_control/.git/COMMIT_EDITMSG
+
+*** File '/home/odroid/catkin_ws/src/offboard_control/.git/COMMIT_EDITMSG'
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch main
+# Changes to be committed:
+#	modified:   launch/mocap.launch
+#	modified:   launch/sysID_trajectory.launch
+#	modified:   src/setpoint_generator.cpp
+#	modified:   src/vicon_position_control.cpp
+#
+commit
+[A
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc

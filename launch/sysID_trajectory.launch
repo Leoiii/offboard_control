@@ -22,8 +22,8 @@
       #refresh_tracker_frequency: 1.0
       trackers:
       #- tester
-      #- drone
-      - act_top
+      - drone
+      #- act_top
     </rosparam>
   </node>
 
@@ -52,6 +52,6 @@
     <arg name="respawn_mavros" default="$(arg respawn_mavros)" />
   </include>
 
-  <node pkg="rosbag" type="record" name="rosbag_record" args="-o ~/Desktop /vrpn_client_node/drone/pose /mavros/rc/in /mavros/target_actuator_controls /mavros/imu/data /mavros/imu/data_raw /mavros/local_position/odom"/>
+  <node pkg="rosbag" type="record" name="rosbag_record" args="record -o /home/odroid/catkin_ws/src/offboard_control/bags/ /vrpn_client_node/drone/pose /mavros/rc/in /mavros/target_actuator_control /mavros/imu/data /mavros/imu/data_raw /mavros/local_position/odom" output="screen"/>
 
 </launch>
