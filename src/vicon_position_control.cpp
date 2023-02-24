@@ -32,7 +32,7 @@ int main(int argc, char **argv)
   ros::init(argc, argv, "vicon_node");
   ros::NodeHandle nh;
   mavros_pose_pub = nh.advertise<geometry_msgs::PoseStamped>("/mavros/vision_pose/pose",2);
-  vicon_sub = nh.subscribe("/vrpn_client_node/drone/pose",2,vicon_cb);  
+  vicon_sub = nh.subscribe("/mocap_node/drone/Odom",2,vicon_cb);  
 
   geometry_msgs::PoseStamped setpoint;
   int count = 1;

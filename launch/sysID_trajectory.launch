@@ -5,7 +5,7 @@
   <arg name="launch_mavros" default="true"/>
   <arg name="launch_position_control" default="true"/>
   <arg name="launch_setpoint_generator" default="true"/>
-
+  <?ignore
   <node if="$(arg launch_mocap)" pkg="vrpn_client_ros" type="vrpn_client_node" name="vrpn_client_node" output="screen">
     <rosparam subst_value="true">
       server: 10.0.0.13
@@ -26,7 +26,7 @@
       #- act_top
     </rosparam>
   </node>
-
+  ?>
   <node if="$(arg launch_position_control)" pkg="offboard_control" type="position_control_node" name="vicon_node" output="screen"/>
 
   <node if="$(arg launch_setpoint_generator)" pkg="offboard_control" type="setpoint_generator_node" name="setpoint_generator_node" output="screen"/>
@@ -52,6 +52,6 @@
     <arg name="respawn_mavros" default="$(arg respawn_mavros)" />
   </include>
 
-  <node pkg="rosbag" type="record" name="rosbag_record" args="record -o /home/odroid/catkin_ws/src/offboard_control/bags/ /vrpn_client_node/drone/pose /mavros/rc/in /mavros/target_actuator_control /mavros/imu/data /mavros/imu/data_raw /mavros/local_position/odom" output="screen"/>
+  <node pkg="rosbag" type="record" name="rosbag_record" args="record -o /home/odroid/catkin_ws/src/offboard_control/bags/ /vrpn_client_node/drone/pose /mavros/setpoint_position/local /mavros/rc/in /mavros/target_actuator_control /mavros/imu/data /mavros/imu/data_raw /mavros/local_position/odom" output="screen"/>
 
 </launch>

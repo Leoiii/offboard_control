@@ -9,7 +9,7 @@ ros::Subscriber mavrosState;
 bool isArmed, isOffboard;
 bool generateSetpoints = false; 
 //char numProcedures = 21;
-char numProcedures = 16;
+char numProcedures = 2;
 void callback(const mavros_msgs::State &msg)
 {
   isArmed = msg.armed;
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 
   int count = 1;
   int procedureNum = 0;
-  double dt = 5.0; //time between setpoints
+  double dt = 600.0; //time between setpoints
   double t0;
   /*float setpoints[numProcedures][7] = {{0.0,0.0,0.5,0.0,0.0,0.0,1.0}, //1
                             {0.0,0.0,1.0,0.0,0.0,0.0,1.0}, 
@@ -64,7 +64,7 @@ int main(int argc, char **argv)
   
   //float setpoints[numProcedures][7] = {0.0,0.0,1.0,0.0,0.0,0.0,1.0};
   
- float setpoints[numProcedures][7] = {{0.0,0.0,1.0,0.0,0.0,0.0,1.0},
+ /*float setpoints[numProcedures][7] = {{0.0,0.0,1.0,0.0,0.0,0.0,1.0},
 				      {0.0,0.0,1.5,0.0,0.0,0.0,1.0},
 				      {0.0,0.0,0.5,0.0,0.0,0.0,1.0},
 				      {0.0,0.0,1.5,0.0,0.0,0.0,1.0},
@@ -79,7 +79,9 @@ int main(int argc, char **argv)
 				      {0.0,0.0,0.9,0.0,0.0,0.0,1.0},
 				      {0.0,0.0,1.1,0.0,0.0,0.0,1.0},
 				      {0.0,0.0,0.9,0.0,0.0,0.0,1.0},
-				      {0.0,0.0,0.3,0.0,0.0,0.0,1.0}};
+				      {0.0,0.0,0.3,0.0,0.0,0.0,1.0}};*/
+  float setpoints[2][7] = {{0.0,0.0,1.3,0.0,0.0,0.0,1.0},
+			   {0.0,0.0,0.3,0.0,0.0,0.0,1.0}};
 
   double currentTime;
   while(ros::ok())
